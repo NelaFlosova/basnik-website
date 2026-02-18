@@ -777,25 +777,76 @@ body {
 
 
 /* ══════════════════════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — < 800px
    ══════════════════════════════════════════════ */
-@media (max-width: 900px) {
-  .scene--dialogue[data-side="law"] .scene__content,
-  .scene--dialogue[data-side="poet"] .scene__content {
-    max-width: 80vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
+@media (max-width: 800px) {
+
+  /* ── Hide divider & split background ────── */
+  .divider {
+    display: none !important;
+  }
+
+  .split-bg {
+    background: var(--n-bg);
+  }
+
+  .split__side--law,
+  .split__side--poet {
+    display: none;
+  }
+
+  /* ── Dialogue: single column, centered ──── */
+  .dialogue-track {
+    padding-top: 20vh;
+  }
+
+  .scene {
+    height: auto;
+    min-height: 50vh;
+    padding: 2rem 0;
   }
 
   .scene--dialogue[data-side="law"],
   .scene--dialogue[data-side="poet"] {
     justify-content: center;
   }
-}
 
-@media (max-width: 768px) {
+  .scene--dialogue[data-side="law"] .scene__content {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: right;
+  }
+
+  .scene--dialogue[data-side="poet"] .scene__content {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+  }
+
+  .scene__dialogue-text {
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
+  }
+
+  /* ── Hero ────────────────────────────────── */
+  .scene__title--basnik {
+    letter-spacing: 0.2em;
+  }
+
+  /* ── Static sections ─────────────────────── */
+  .section {
+    padding: 3rem var(--gutter);
+  }
+
+  .section--synopsis {
+    padding: 5rem var(--gutter) 3rem;
+  }
+
   .section--cast .section__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -803,20 +854,59 @@ body {
 
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .section {
-    padding: 3.5rem var(--gutter);
+  /* ── Donio CTA ───────────────────────────── */
+  .donio {
+    padding: 6rem var(--gutter);
+  }
+
+  .donio__heading {
+    white-space: normal;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  /* ── Photo scatter ───────────────────────── */
+  .photo-scatter {
+    height: 280px;
+  }
+
+  .photo-scatter__item {
+    display: none;
+  }
+
+  .photo-scatter__item:nth-child(2),
+  .photo-scatter__item:nth-child(4),
+  .photo-scatter__item:nth-child(6) {
+    display: block;
+    position: relative;
+    width: 30%;
+    height: 200px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+  }
+
+  .photo-scatter__item:nth-child(2):hover,
+  .photo-scatter__item:nth-child(4):hover,
+  .photo-scatter__item:nth-child(6):hover {
+    transform: scale(1.05);
+  }
+
+  .photo-scatter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .footer {
+    margin-top: -80px;
   }
 
   .scene__content {
-    padding: 3rem 1.5rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .scene__scroll-hint {
-    margin-top: 2rem;
+    padding: 2rem 1rem;
   }
 }

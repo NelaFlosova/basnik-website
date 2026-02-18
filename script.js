@@ -150,7 +150,7 @@
     window.addEventListener('resize', function () { vh = window.innerHeight; });
 
     window.addEventListener('scroll', function () {
-      if (!heroGone) return;
+      if (!heroGone || vh <= 0 || window.innerWidth <= 800) return;
 
       var scrollY = window.scrollY;
       var scrollingDown = scrollY >= lastScrollY;
