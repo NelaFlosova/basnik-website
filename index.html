@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BASNÍK — Poslední verš</title>
+  <meta name="description" content="Basník — interaktivní web ke studentskému krátkému filmu. Dva muži, jedny dveře, rozhovor o smrti, životě a umění.">
+  <meta property="og:title" content="BASNÍK — Poslední verš">
+  <meta property="og:description" content="Ve světě, kde umění je zakázáno, vedou dva muži rozhovor skrz zavřené dveře.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050810">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✒</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- MAIN EXPERIENCE                              -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main class="experience active" id="experience">
+
+    <!-- Particles (fixed, fades when dialogue ends) -->
+    <!-- <canvas class="particles" id="particles"></canvas> -->
+
+    <!-- Door divider line (fixed, above everything) -->
+    <div class="divider" id="divider"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION — Full-screen hero image        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h2 class="scene__title scene__title--basnik">BASNÍK</h2>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- DIALOGUE SECTION — Split-screen with doors  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="dialogue-section" id="dialogueSection">
+
+      <!-- Sticky background: split screen -->
+      <div class="split-bg" id="splitBg">
+        <div class="split__side split__side--law"></div>
+        <div class="split__side split__side--poet"></div>
+      </div>
+
+      <!-- Dialogue scenes (scroll over the sticky bg) -->
+      <div class="dialogue-track" id="dialogueTrack">
+
+        <!-- Scene 1: The Knock -->
+        <section class="scene scene--dialogue" data-scene="1" data-side="law">
+          <div class="scene__content">
+            <span class="scene__speaker scene__speaker--law">MUŽ ZÁKONA</span>
+            <p class="scene__dialogue-text scene__dialogue-text--law">Pane Brázda,<br>já vím, že tam jste.</p>
+          </div>
+        </section>
+
+        <!-- Scene 2: The Response -->
+        <section class="scene scene--dialogue" data-scene="2" data-side="poet">
+          <div class="scene__content">
+            <span class="scene__speaker scene__speaker--poet">BRÁZDA</span>
+            <p class="scene__dialogue-text scene__dialogue-text--poet">No, jsem. A co?</p>
+          </div>
+        </section>
+
+        <!-- Scene 3: The Reason -->
+        <section class="scene scene--dialogue" data-scene="3" data-side="law">
+          <div class="scene__content">
+            <span class="scene__speaker scene__speaker--law">MUŽ ZÁKONA</span>
+            <p class="scene__dialogue-text scene__dialogue-text--law">Nechte toho.<br>Jste snad už poslední básník v&nbsp;Praze.</p>
+          </div>
+        </section>
+
+        <!-- Scene 4: Defiance -->
+        <section class="scene scene--dialogue" data-scene="4" data-side="poet">
+          <div class="scene__content">
+            <span class="scene__speaker scene__speaker--poet">BRÁZDA</span>
+            <p class="scene__dialogue-text scene__dialogue-text--poet">A co jsem provedl?<br>Táhněte!</p>
+          </div>
+        </section>
+
+      </div><!-- /dialogue-track -->
+    </div><!-- /dialogue-section -->
+
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- STATIC SECTION — Normal scrolling content   -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="static-section" id="staticSection">
+
+      <div class="static-section__fade"></div>
+
+      <!-- SYNOPSE -->
+      <section class="section section--synopsis" id="synopse">
+        <h2 class="section__heading">Synopse</h2>
+        <p class="section__body">Ve&nbsp;světě, kde umění je zakázáno, se&nbsp;setkáváme se&nbsp;starým básníkem Jaromírem Brázdou. Na&nbsp;dveře mu jednoho večera zaklepe muž zákona, který má za&nbsp;úkol básníka zabít. Brázda se&nbsp;odmítá vzdát, ale muž ho přemlouvá, aby si pospíšil, protože mužova žena bude brzy rodit. Oba muži spolu vedou rozhovor skrz zavřené dveře&nbsp;– o&nbsp;smrti, životě, umění, spravedlnosti.</p>
+      </section>
+
+      <!-- Film image — zooms to full width on scroll -->
+      <div class="film-image" id="filmImage"></div>
+
+      <!-- HRAJÍ -->
+      <section class="section section--cast" id="hraji">
+        <h2 class="section__heading">Hrají</h2>
+        <div class="section__grid">
+
+          <div class="cast-card">
+            <div class="cast-card__photo"></div>
+            <h3 class="cast-card__name">Ondřej Novotný</h3>
+            <span class="cast-card__role">jako Muž zákona</span>
+          </div>
+
+          <div class="cast-card">
+            <div class="cast-card__photo"></div>
+            <h3 class="cast-card__name">Pavel Šimek</h3>
+            <span class="cast-card__role">jako Jaromír Brázda</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TVŮRCI -->
+      <section class="section section--team" id="tvurci">
+        <h2 class="section__heading">Tvůrci</h2>
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-card__photo"></div>
+            <h3 class="team-card__name">Tereza Ryšavá</h3>
+            <span class="team-card__role">Režie</span>
+            <div class="team-card__socials">
+              <a href="#" class="team-card__icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg></a>
+              <a href="#" class="team-card__icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo"></div>
+            <h3 class="team-card__name">Lucie Šarochová</h3>
+            <span class="team-card__role">Produkce</span>
+            <div class="team-card__socials">
+              <a href="#" class="team-card__icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg></a>
+              <a href="#" class="team-card__icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo"></div>
+            <h3 class="team-card__name">Anežka Čermáková</h3>
+            <span class="team-card__role">Kamera</span>
+            <div class="team-card__socials">
+              <a href="#" class="team-card__icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg></a>
+              <a href="#" class="team-card__icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo"></div>
+            <h3 class="team-card__name">Nela Flosová</h3>
+            <span class="team-card__role">Střih</span>
+            <div class="team-card__socials">
+              <a href="#" class="team-card__icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg></a>
+              <a href="#" class="team-card__icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-card__photo"></div>
+            <h3 class="team-card__name">Jan Pavel Bína</h3>
+            <span class="team-card__role">Zvuk</span>
+            <div class="team-card__socials">
+              <a href="#" class="team-card__icon" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 4 10 8 10-8"/></svg></a>
+              <a href="#" class="team-card__icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /static-section -->
+
+
+    <!-- DONIO CTA -->
+    <section class="donio" id="donio">
+      <div class="donio__glow"></div>
+      <div class="donio__content">
+        <span class="donio__label">Podpořte film</span>
+        <h2 class="donio__heading">Pomozte nám dokončit Basníka</h2>
+        <p class="donio__text">Každá koruna nás přibližuje k&nbsp;tomu, aby se příběh posledního básníka dostal na&nbsp;plátno.</p>
+        <a href="https://www.donio.cz" target="_blank" rel="noopener" class="donio__btn">
+          <span class="donio__btn-text">Podpořit na Donio</span>
+          <svg class="donio__btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- PHOTO SCATTER + FOOTER -->
+    <div class="photo-footer">
+      <div class="photo-scatter">
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+        <div class="photo-scatter__item"></div>
+      </div>
+      <footer class="footer">
+        <div class="footer__meta">
+          <p>Studentský krátký film — 2025</p>
+          <p>Vysoká škola ekonomická v Praze</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress" id="progress">
+      <div class="progress__bar" id="progressBar"></div>
+    </div>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
